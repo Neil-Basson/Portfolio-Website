@@ -1,90 +1,132 @@
-document.addEventListener('load', () => {
-    console.log('Site loaded and interactive');
-  });
-  
-  // Scroll-triggered fade-in for about cards
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".about-card");
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-  
-    cards.forEach(card => observer.observe(card));
-  });
-  
+/* ============================================================
+   CANVAS PARTICLE BACKGROUND
+   ============================================================ */
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouse = { x: null, y: null };
 
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
 
+resizeCanvas();
+window.addEventListener('resize', () => {
+  resizeCanvas();
+  initParticles();
+});
 
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
 
+window.addEventListener('mouseleave', () => {
+  mouse.x = null;
+  mouse.y = null;
+});
 
-
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-  const track = document.getElementById('carouselTrack');
-  const container = document.querySelector('.projects-carousel');
-  let originalCards = Array.from(track.children);
-
-  const numClones = 2;
-  const cardGap = 32; // match your CSS gap (2rem)
-
-  // Clone first and last few cards
-  const firstClones = originalCards.slice(0, numClones).map(c => c.cloneNode(true));
-  const lastClones = originalCards.slice(-numClones).map(c => c.cloneNode(true));
-
-  firstClones.forEach(c => track.appendChild(c));
-  lastClones.reverse().forEach(c => track.insertBefore(c, track.firstChild));
-
-  const allCards = track.querySelectorAll('.project-card');
-
-  const cardWidth = originalCards[0].offsetWidth + cardGap;
-  const jumpOffset = cardWidth * numClones;
-
-  // Initial scroll to real first card
-  container.scrollLeft = jumpOffset;
-
-  function highlightCenterCard() {
-    const center = container.scrollLeft + container.offsetWidth / 2;
-    let closest = null;
-    let closestDist = Infinity;
-
-    allCards.forEach(card => {
-      const box = card.getBoundingClientRect();
-      const cardCenter = box.left + box.width / 2;
-      const dist = Math.abs(window.innerWidth / 2 - cardCenter);
-      if (dist < closestDist) {
-        closestDist = dist;
-        closest = card;
-      }
-    });
-
-    allCards.forEach(card => card.classList.remove('active'));
-    if (closest) closest.classList.add('active');
+class Particle {
+  constructor() {
+    this.reset(true);
   }
 
-  function handleScrollLoop() {
-    const scrollLeft = container.scrollLeft;
-    const maxScroll = track.scrollWidth - container.offsetWidth;
+  reset(initial) {
+    this.x  = Math.random() * canvas.width;
+    this.y  = initial ? Math.random() * canvas.height : -5;
+    this.vx = (Math.random() - 0.5) * 0.35;
+    this.vy = (Math.random() - 0.5) * 0.35;
+    this.r  = Math.random() * 1.4 + 0.4;
+    this.a  = Math.random() * 0.35 + 0.08;
+  }
 
-    if (scrollLeft <= cardWidth / 2) {
-      container.scrollLeft = scrollLeft + (cardWidth * originalCards.length);
-    } else if (scrollLeft >= maxScroll - (cardWidth * numClones)) {
-      container.scrollLeft = scrollLeft - (cardWidth * originalCards.length);
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    if (this.x < 0 || this.x > canvas.width)  this.vx *= -1;
+    if (this.y < 0 || this.y > canvas.height)  this.vy *= -1;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${this.a})`;
+    ctx.fill();
+  }
+}
+
+function initParticles() {
+  const density = Math.floor((canvas.width * canvas.height) / 14000);
+  const count   = Math.min(density, 90);
+  particles = Array.from({ length: count }, () => new Particle());
+}
+
+function drawConnections() {
+  const maxDist  = 140;
+  const mouseDist = 160;
+
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx   = particles[i].x - particles[j].x;
+      const dy   = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < maxDist) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(100,150,255,${(1 - dist / maxDist) * 0.12})`;
+        ctx.lineWidth = 0.6;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
     }
 
-    highlightCenterCard();
+    if (mouse.x !== null) {
+      const dx   = particles[i].x - mouse.x;
+      const dy   = particles[i].y - mouse.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < mouseDist) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(0,113,227,${(1 - dist / mouseDist) * 0.35})`;
+        ctx.lineWidth = 0.8;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.stroke();
+      }
+    }
   }
+}
 
-  container.addEventListener('scroll', () => {
-    window.requestAnimationFrame(handleScrollLoop);
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  drawConnections();
+  requestAnimationFrame(animate);
+}
+
+initParticles();
+animate();
+
+/* ============================================================
+   NAV SCROLL EFFECT
+   ============================================================ */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+/* ============================================================
+   SCROLL FADE-IN
+   ============================================================ */
+const fadeEls = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  highlightCenterCard();
-});
+fadeEls.forEach(el => observer.observe(el));
