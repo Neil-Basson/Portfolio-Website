@@ -1,293 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Neil Basson – ML Engineer</title>
+  <title>Neil Basson — AI & Data Solutions Engineer</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    .hero, .about {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero {
-      background: #f9f9f9;
-      overflow: hidden;
-      flex-direction: column;
-    }
-
-    .hero-content {
-      z-index: 2;
-      text-align: center;
-      opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-    }
-
-    .headline {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -1px;
-    }
-
-    .subhead {
-      font-size: 2rem;
-      font-weight: 400;
-      color: #555;
-      margin-top: 1rem;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .about {
-      background: white;
-      padding: 4rem 2rem;
-      display: flex;
-      gap: 3rem;
-      flex-direction: row;
-    }
-
-    .about-visual {
-      flex: 1;
-      position: relative;
-    }
-
-    .about-visual img {
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .about-text {
-      flex: 2;
-      max-width: 600px;
-    }
-
-    .about-text h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-text p {
-      line-height: 1.6;
-      color: #333;
-    }
-  </style>
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <section class="hero">
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">NB</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <canvas id="canvas"></canvas>
     <div class="hero-content">
-      <h1 class="headline">Machine Learning Engineer</h1>
-      <h2 class="subhead">Neil Basson</h2>
+      <p class="hero-eyebrow">AI &amp; Data Solutions Engineer</p>
+      <h1 class="hero-title">Neil<br>Basson</h1>
+      <p class="hero-sub">Industrial engineer by training. AI solutions practitioner by focus.<br>Building production-ready systems that drive real business outcomes.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Work</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <section id="about" class="about-grid">
-    <!-- Left Column -->
-    <div class="academic-left">
-      <div class="academic-card">
-        <h3>Academic Background</h3>
-  
-        <div class="uni-detail">
-          <img src="images/UniversityofAmsterdam.png" alt="University of Amsterdam" />
-          <div class="uni-info">
-            <h4>University of Amsterdam</h4>
-            <p><strong>Degree:</strong> MSc Data Science & Business Analytics<br>
-               <strong>Dates:</strong> 2023 – 2024<br>
-               <em>Focus: forecasting, ML, reinforcement & deep learning, analytics for business.</em>
-            </p>
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-label">About</p>
+      <h2 class="section-title">Systems thinker.<br>AI builder.</h2>
+      <div class="about-grid">
+        <div class="about-bio glass-card fade-in">
+          <p>Currently embedded at group level within a multinational manufacturing group, building data infrastructure and AI capabilities that span multiple business entities.</p>
+          <p>I work across the full stack — from lakehouse architecture and ML pipelines to generative AI systems and agentic workflows — always with a focus on solutions that are production-ready, explainable to stakeholders, and tied to real business outcomes.</p>
+          <div class="about-meta">
+            <span class="meta-pill">&#127475;&#127473; &#127487;&#127462; Dutch &amp; South African</span>
+            <span class="meta-pill">&#128205; Amsterdam, Netherlands</span>
           </div>
         </div>
-  
-        <div class="uni-detail">
-          <img src="images/StellenboschUniversity.png" alt="Stellenbosch University" />
-          <div class="uni-info">
-            <h4>Stellenbosch University</h4>
-            <p><strong>Degree:</strong> BEng Industrial Engineering<br>
-               <strong>Dates:</strong> 2020 – 2023<br>
-               <em>Core modules: operations research, statistics, systems optimization.</em>
-            </p>
+        <div class="education-list fade-in">
+          <p class="card-label">Education</p>
+          <div class="edu-card glass-card">
+            <div class="edu-icon">
+              <img src="images/UniversityofAmsterdam.png" alt="University of Amsterdam" />
+            </div>
+            <div class="edu-info">
+              <h4>MSc Business Information Technology Management</h4>
+              <p>University of Amsterdam &middot; 2025 – 2027</p>
+            </div>
+          </div>
+          <div class="edu-card glass-card">
+            <div class="edu-icon">
+              <img src="images/UniversityofAmsterdam.png" alt="University of Amsterdam" />
+            </div>
+            <div class="edu-info">
+              <h4>MSc Data Science &amp; Business Analytics</h4>
+              <p>University of Amsterdam &middot; 2024 – 2025</p>
+            </div>
+          </div>
+          <div class="edu-card glass-card">
+            <div class="edu-icon">
+              <img src="images/StellenboschUniversity.png" alt="Stellenbosch University" />
+            </div>
+            <div class="edu-info">
+              <h4>BEng Industrial Engineering</h4>
+              <p>Stellenbosch University &middot; 2020 – 2023</p>
+            </div>
           </div>
         </div>
-  
-        <div class="uni-detail">
-          <img src="images/PaulRoos.png" alt="Paul Roos Gymnasium" />
-          <div class="uni-info">
-            <h4>Paul Roos Gymnasium</h4>
-            <p><strong>Matriculated:</strong> 2019<br>
-               <em>Maths, Physics, Accounting, AutoCAD</em>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Right Column -->
-    <div class="about-right">
-      <div class="about-card visible">
-        <h3>About Me</h3>
-        <p>
-          As a half South African, half Dutch Industrial Engineer, I’ve always been fascinated by how different perspectives can lead to creative solutions. After earning my Bachelor's in Industrial Engineering, I realized my passion for optimizing processes wasn’t just about machines, it was about making smarter decisions with data. That’s why I’m now pursuing an MSc in Data Science and Business Analytics at the University of Amsterdam.
-          Currently diving into machine learning and optimization. My goal? To combine my engineering mindset with advanced analytics to tackle complex business challenges. Whether it’s refining operations or building predictive models, I’m all about turning data into actionable insights. WYFB.
-        </p>
-      </div>
-  
-      <div class="about-card visible">
-        <h3>Current Interests</h3>
-        <p>
-          Forecasting, optimization, neural networks, and how machine learning can make complex systems easier to run.
-        </p>
       </div>
     </div>
   </section>
 
+  <!-- ==================== SKILLS ==================== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <p class="section-label">Capabilities</p>
+      <h2 class="section-title">Built for the<br>full AI stack.</h2>
+      <div class="skills-grid">
+        <div class="skill-card glass-card fade-in">
+          <div class="skill-icon">&#9889;</div>
+          <h3>Core Stack</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>SQL</span><span>Spark</span><span>Git</span><span>Microsoft Fabric</span><span>Azure</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card fade-in">
+          <div class="skill-icon">&#129504;</div>
+          <h3>AI &amp; Machine Learning</h3>
+          <div class="skill-tags">
+            <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span><span>Classical ML</span><span>Time Series</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card fade-in">
+          <div class="skill-icon">&#129302;</div>
+          <h3>Generative AI &amp; Agents</h3>
+          <div class="skill-tags">
+            <span>LLMs</span><span>Azure OpenAI</span><span>Claude</span><span>RAG</span><span>Multi-Agent Systems</span><span>Prompt Engineering</span><span>Azure AI Search</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card fade-in">
+          <div class="skill-icon">&#127959;&#65039;</div>
+          <h3>AI Architecture &amp; Delivery</h3>
+          <div class="skill-tags">
+            <span>End-to-End AI Design</span><span>MLOps</span><span>API Integration</span><span>Model Deployment</span><span>Secure Enterprise AI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Where I've<br>delivered.</h2>
+      <div class="timeline">
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Data &amp; Machine Learning Engineer</h3>
+                <p class="timeline-company">TenCate Grass</p>
+              </div>
+              <span class="timeline-date">Sep 2025 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built a Microsoft Fabric lakehouse (bronze &#8594; silver &#8594; gold) with automated ingestion pipelines using Data Factory, PySpark &amp; Delta Lake.</li>
+              <li>Developed a customer segmentation model with XGBoost &amp; Random Forest on geographic and spend features to surface high-value customer groups and seasonal patterns.</li>
+              <li>Engineered a time series sensor data workflow for a high-volume manufacturing line, integrating PLC streams with window-based statistical thresholds linked to quality defects and yield performance.</li>
+              <li>Mapped cross-company process flows in SQL and Python to surface data gaps across production, logistics, and sales entities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Lean Manufacturing Data Analyst</h3>
+                <p class="timeline-company">Heineken Beverages South Africa &middot; Internship</p>
+              </div>
+              <span class="timeline-date">Mar – Nov 2023</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Analysed production line data with Python &amp; R to identify bottlenecks in Heineken's box wine packaging line using statistical modelling.</li>
+              <li>Quantified waste reduction opportunities, proposing targeted improvements projected to reduce production waste by ~2%.</li>
+              <li>Delivered findings via interactive Power BI dashboards enabling non-technical stakeholders to act on operational trends.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content glass-card">
+            <div class="timeline-header">
+              <div>
+                <h3>Junior Operations Data Scientist</h3>
+                <p class="timeline-company">Ocean Guard Africa</p>
+              </div>
+              <span class="timeline-date">Jun – Dec 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Built a regression model with Scikit-learn to predict equipment failures, reducing unexpected downtime by 15% through targeted maintenance planning.</li>
+              <li>Automated repetitive data processing with Python &amp; pandas, cutting manual reporting time by ~6 hours per week.</li>
+              <li>Integrated Excel procurement data via openpyxl, contributing to a 20% reduction in procurement cycle times.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Selected<br>work.</h2>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card featured fade-in">
+          <div class="project-tag">MSc Thesis (Management) &middot; Current</div>
+          <h3>AI Governance &amp; Deployment Readiness Framework for Clinical ML</h3>
+          <p>Developing a governance and deployment readiness framework for operationalising a lung cancer classification model in a clinical radiology setting. Maps the ML pipeline against EU AI Act requirements, ISO/IEC 42001 controls, and FDA/IMDRF medical AI lifecycle guidance.</p>
+          <div class="project-tech">
+            <span>EU AI Act</span><span>ISO/IEC 42001</span><span>Design Science Research</span><span>MLOps</span><span>Responsible AI</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-in">
+          <div class="project-tag">MSc Thesis (Data Science) &middot; 2025</div>
+          <h3>Lung Cancer Segmentation &amp; Classification Pipeline</h3>
+          <p>End-to-end segmentation-classification pipeline in PyTorch processing CT scans to predict lung tumour malignancy. Multi-branch deep neural architecture with Grad-CAM interpretability on the 130 GB LIDC-IDRI dataset.</p>
+          <div class="project-tech">
+            <span>PyTorch</span><span>CNN</span><span>Grad-CAM</span><span>DICOM</span><span>Responsible AI</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-in">
+          <div class="project-tag">2024</div>
+          <h3>Brain Tumour Classification &amp; Segmentation</h3>
+          <p>Custom deep learning pipeline in TensorFlow/Keras for simultaneous MRI segmentation and classification, combining CNNs with data augmentation, structured label extraction, and SGD variant experimentation.</p>
+          <div class="project-tech">
+            <span>TensorFlow</span><span>Keras</span><span>CNN</span><span>MRI</span><span>Segmentation</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card fade-in">
+          <div class="project-tag">2024</div>
+          <h3>Predictive Modelling &amp; Feature Engineering</h3>
+          <p>Built and compared regression models (Ridge, Lasso, KNN, Kernel Ridge) with PCA dimensionality reduction and GridSearchCV hyperparameter tuning, evaluated with structured cross-validation for generalisability.</p>
+          <div class="project-tech">
+            <span>Scikit-learn</span><span>PCA</span><span>GridSearchCV</span><span>Cross-validation</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section" id="contact">
+    <div class="container contact-container">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's build<br>something.</h2>
+      <p class="contact-sub">Open to collaboration, consulting, and interesting problems.<br>Reach out and let's talk.</p>
+      <div class="contact-links">
+        <a href="mailto:neilbasson2@gmail.com" class="btn-primary">neilbasson2@gmail.com</a>
+        <a href="https://www.linkedin.com/in/neil-basson-link-to-view" target="_blank" rel="noopener" class="btn-ghost">LinkedIn &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <p>&copy; 2026 Neil Basson &middot; Amsterdam</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
-<script>
-  const canvas = document.getElementById("bg");
-  const ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let particles = [];
-  const count = 80;
-  let mouse = { x: null, y: null };
-
-  for (let i = 0; i < count; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach((p, idx) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-      ctx.fillStyle = "#ccc";
-      ctx.fill();
-      for (let j = idx + 1; j < particles.length; j++) {
-        const p2 = particles[j];
-        const dx = p.x - p2.x;
-        const dy = p.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = "rgba(150,150,150,0.1)";
-          ctx.stroke();
-        }
-      }
-      if (mouse.x && mouse.y) {
-        const dx = p.x - mouse.x;
-        const dy = p.y - mouse.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = "rgba(100,150,255,0.2)";
-          ctx.stroke();
-        }
-      }
-    });
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-  window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-
-  window.addEventListener("mousemove", e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener("mouseout", () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-</script>
 </html>
-
-
-
-
-<section id="projects" class="projects-carousel">
-  <h2>Projects</h2>
-  <div class="carousel-track" id="carouselTrack">
-    <div class="project-card">
-      <img src="images/project1.png" alt="Project 1" />
-      <h3>Masters Thesis</h3>
-      <p>Used ML + vision + robotics to estimate object properties non-invasively.</p>
-    </div>
-    <div class="project-card">
-      <img src="images/project2.png" alt="Project 2" />
-      <h3>Flight Optimization Model</h3>
-      <p>Built a constraint-based model to optimize aircraft surveillance paths.</p>
-    </div>
-    <div class="project-card">
-      <img src="images/project3.png" alt="Project 3" />
-      <h3>People Analytics Dashboard</h3>
-      <p>Interactive HR insights from M&A data using Power BI and Python.</p>
-    </div>
-    <div class="project-card">
-      <img src="images/project3.png" alt="Project 4" />
-      <h3>People Analytics Dashboard</h3>
-      <p>Interactive HR insights from M&A data using Power BI and Python.</p>
-    </div>
-    <div class="project-card">
-      <img src="images/project3.png" alt="Project 5" />
-      <h3>People Analytics Dashboard</h3>
-      <p>Interactive HR insights from M&A data using Power BI and Python.</p>
-    </div>
-    <!-- Add more project cards as needed -->
-  </div>
-</section>
-
-  
-
-  <section class="section contact">
-    <h2>Contact</h2>
-    <p>Let’s connect – neil.basson@example.com</p>
-  </section>
-</body>
-</html>
-
