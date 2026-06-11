@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- ==================== NAV ==================== -->
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">NB</a>
@@ -19,68 +19,93 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ==================== HERO ==================== -->
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- HERO -->
   <section class="hero" id="hero">
     <canvas id="canvas"></canvas>
+    <div class="hero-glow"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">AI &amp; Data Solutions Engineer</p>
-      <h1 class="hero-title">Neil<br>Basson</h1>
+      <div class="hero-badge">Available for collaboration</div>
+      <h1 class="hero-title">Neil<br><span class="hero-title-accent">Basson</span></h1>
+      <p class="hero-role">AI &amp; Data Solutions Engineer</p>
       <p class="hero-sub">Industrial engineer by training. AI solutions practitioner by focus.<br>Building production-ready systems that drive real business outcomes.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View Work</a>
+        <a href="#projects" class="btn-primary">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Experience</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Major Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">MSc Degrees</span></div>
       </div>
     </div>
     <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
     </div>
   </section>
 
-  <!-- ==================== ABOUT ==================== -->
+  <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
-      <p class="section-label">About</p>
-      <h2 class="section-title">Systems thinker.<br>AI builder.</h2>
+      <div class="section-header fade-in">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Systems thinker.<br>AI builder.</h2>
+      </div>
       <div class="about-grid">
         <div class="about-bio glass-card fade-in">
-          <p>Currently embedded at group level within a multinational manufacturing group, building data infrastructure and AI capabilities that span multiple business entities.</p>
-          <p>I work across the full stack — from lakehouse architecture and ML pipelines to generative AI systems and agentic workflows — always with a focus on solutions that are production-ready, explainable to stakeholders, and tied to real business outcomes.</p>
-          <div class="about-meta">
-            <span class="meta-pill">&#127475;&#127473; &#127487;&#127462; Dutch &amp; South African</span>
-            <span class="meta-pill">&#128205; Amsterdam, Netherlands</span>
+          <div class="about-bio-inner">
+            <p>Currently embedded at group level within a multinational manufacturing group, building data infrastructure and AI capabilities that span multiple business entities.</p>
+            <p>I work across the full stack — from lakehouse architecture and ML pipelines to generative AI systems and agentic workflows — always with a focus on solutions that are <strong>production-ready</strong>, explainable to stakeholders, and tied to real business outcomes.</p>
+          </div>
+          <div class="about-pills">
+            <span class="pill">&#127475;&#127473; Dutch</span>
+            <span class="pill">&#127487;&#127462; South African</span>
+            <span class="pill">&#128205; Amsterdam</span>
           </div>
         </div>
-        <div class="education-list fade-in">
-          <p class="card-label">Education</p>
+        <div class="education-col fade-in">
+          <p class="col-label">Education</p>
           <div class="edu-card glass-card">
-            <div class="edu-icon">
-              <img src="images/UniversityofAmsterdam.png" alt="University of Amsterdam" />
-            </div>
+            <div class="edu-icon"><img src="images/UniversityofAmsterdam.png" alt="UvA" /></div>
             <div class="edu-info">
-              <h4>MSc Business Information Technology Management</h4>
+              <h4>MSc Business IT Management</h4>
               <p>University of Amsterdam &middot; 2025 – 2027</p>
+              <span class="edu-badge ongoing">In Progress</span>
             </div>
           </div>
           <div class="edu-card glass-card">
-            <div class="edu-icon">
-              <img src="images/UniversityofAmsterdam.png" alt="University of Amsterdam" />
-            </div>
+            <div class="edu-icon"><img src="images/UniversityofAmsterdam.png" alt="UvA" /></div>
             <div class="edu-info">
               <h4>MSc Data Science &amp; Business Analytics</h4>
               <p>University of Amsterdam &middot; 2024 – 2025</p>
+              <span class="edu-badge done">Completed</span>
             </div>
           </div>
           <div class="edu-card glass-card">
-            <div class="edu-icon">
-              <img src="images/StellenboschUniversity.png" alt="Stellenbosch University" />
-            </div>
+            <div class="edu-icon"><img src="images/StellenboschUniversity.png" alt="SU" /></div>
             <div class="edu-info">
               <h4>BEng Industrial Engineering</h4>
               <p>Stellenbosch University &middot; 2020 – 2023</p>
+              <span class="edu-badge done">Completed</span>
             </div>
           </div>
         </div>
@@ -88,36 +113,46 @@
     </div>
   </section>
 
-  <!-- ==================== SKILLS ==================== -->
+  <!-- SKILLS -->
   <section class="section section-alt" id="skills">
     <div class="container">
-      <p class="section-label">Capabilities</p>
-      <h2 class="section-title">Built for the<br>full AI stack.</h2>
+      <div class="section-header fade-in">
+        <p class="section-label">Capabilities</p>
+        <h2 class="section-title">Built for the<br>full AI stack.</h2>
+      </div>
       <div class="skills-grid">
         <div class="skill-card glass-card fade-in">
-          <div class="skill-icon">&#9889;</div>
-          <h3>Core Stack</h3>
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap gradient-blue"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3>Core Stack</h3>
+          </div>
           <div class="skill-tags">
             <span>Python</span><span>SQL</span><span>Spark</span><span>Git</span><span>Microsoft Fabric</span><span>Azure</span>
           </div>
         </div>
         <div class="skill-card glass-card fade-in">
-          <div class="skill-icon">&#129504;</div>
-          <h3>AI &amp; Machine Learning</h3>
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap gradient-purple"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg></div>
+            <h3>AI &amp; Machine Learning</h3>
+          </div>
           <div class="skill-tags">
             <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span><span>Classical ML</span><span>Time Series</span>
           </div>
         </div>
         <div class="skill-card glass-card fade-in">
-          <div class="skill-icon">&#129302;</div>
-          <h3>Generative AI &amp; Agents</h3>
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap gradient-teal"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v6M14.5 17h6"/></svg></div>
+            <h3>Generative AI &amp; Agents</h3>
+          </div>
           <div class="skill-tags">
-            <span>LLMs</span><span>Azure OpenAI</span><span>Claude</span><span>RAG</span><span>Multi-Agent Systems</span><span>Prompt Engineering</span><span>Azure AI Search</span>
+            <span>LLMs</span><span>Azure OpenAI</span><span>Claude</span><span>RAG</span><span>Multi-Agent</span><span>Prompt Engineering</span><span>Azure AI Search</span>
           </div>
         </div>
         <div class="skill-card glass-card fade-in">
-          <div class="skill-icon">&#127959;&#65039;</div>
-          <h3>AI Architecture &amp; Delivery</h3>
+          <div class="skill-card-top">
+            <div class="skill-icon-wrap gradient-orange"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>AI Architecture &amp; Delivery</h3>
+          </div>
           <div class="skill-tags">
             <span>End-to-End AI Design</span><span>MLOps</span><span>API Integration</span><span>Model Deployment</span><span>Secure Enterprise AI</span>
           </div>
@@ -126,65 +161,84 @@
     </div>
   </section>
 
-  <!-- ==================== EXPERIENCE ==================== -->
+  <!-- EXPERIENCE -->
   <section class="section" id="experience">
     <div class="container">
-      <p class="section-label">Experience</p>
-      <h2 class="section-title">Where I've<br>delivered.</h2>
+      <div class="section-header fade-in">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Where I've<br>delivered.</h2>
+      </div>
       <div class="timeline">
 
         <div class="timeline-item fade-in">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-header">
+          <div class="timeline-left">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-top">
               <div>
+                <span class="timeline-company-badge">TenCate Grass</span>
                 <h3>Data &amp; Machine Learning Engineer</h3>
-                <p class="timeline-company">TenCate Grass</p>
               </div>
-              <span class="timeline-date">Sep 2025 – Present</span>
+              <span class="timeline-date current">Sep 2025 – Present</span>
             </div>
             <ul class="timeline-bullets">
               <li>Built a Microsoft Fabric lakehouse (bronze &#8594; silver &#8594; gold) with automated ingestion pipelines using Data Factory, PySpark &amp; Delta Lake.</li>
               <li>Developed a customer segmentation model with XGBoost &amp; Random Forest on geographic and spend features to surface high-value customer groups and seasonal patterns.</li>
-              <li>Engineered a time series sensor data workflow for a high-volume manufacturing line, integrating PLC streams with window-based statistical thresholds linked to quality defects and yield performance.</li>
-              <li>Mapped cross-company process flows in SQL and Python to surface data gaps across production, logistics, and sales entities.</li>
+              <li>Engineered a time series sensor data workflow integrating PLC streams with window-based statistical thresholds linked to quality defects and yield performance.</li>
+              <li>Mapped cross-company process flows in SQL &amp; Python to surface data gaps across production, logistics, and sales entities.</li>
             </ul>
+            <div class="timeline-tech">
+              <span>Microsoft Fabric</span><span>PySpark</span><span>XGBoost</span><span>Delta Lake</span><span>Azure</span>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item fade-in">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-header">
+          <div class="timeline-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-top">
               <div>
-                <h3>Lean Manufacturing Data Analyst</h3>
-                <p class="timeline-company">Heineken Beverages South Africa &middot; Internship</p>
+                <span class="timeline-company-badge">Heineken Beverages SA</span>
+                <h3>Lean Manufacturing Data Analyst <span class="role-tag">Internship</span></h3>
               </div>
               <span class="timeline-date">Mar – Nov 2023</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Analysed production line data with Python &amp; R to identify bottlenecks in Heineken's box wine packaging line using statistical modelling.</li>
-              <li>Quantified waste reduction opportunities, proposing targeted improvements projected to reduce production waste by ~2%.</li>
-              <li>Delivered findings via interactive Power BI dashboards enabling non-technical stakeholders to act on operational trends.</li>
+              <li>Analysed production line data with Python &amp; R to identify bottlenecks in the box wine packaging line using statistical modelling.</li>
+              <li>Quantified waste reduction opportunities projected to reduce production waste by ~2%.</li>
+              <li>Delivered interactive Power BI dashboards enabling non-technical stakeholders to act on operational trends.</li>
             </ul>
+            <div class="timeline-tech">
+              <span>Python</span><span>R</span><span>Power BI</span><span>Statistical Modelling</span>
+            </div>
           </div>
         </div>
 
         <div class="timeline-item fade-in">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content glass-card">
-            <div class="timeline-header">
+          <div class="timeline-left">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-top">
               <div>
+                <span class="timeline-company-badge">Ocean Guard Africa</span>
                 <h3>Junior Operations Data Scientist</h3>
-                <p class="timeline-company">Ocean Guard Africa</p>
               </div>
               <span class="timeline-date">Jun – Dec 2022</span>
             </div>
             <ul class="timeline-bullets">
-              <li>Built a regression model with Scikit-learn to predict equipment failures, reducing unexpected downtime by 15% through targeted maintenance planning.</li>
-              <li>Automated repetitive data processing with Python &amp; pandas, cutting manual reporting time by ~6 hours per week.</li>
-              <li>Integrated Excel procurement data via openpyxl, contributing to a 20% reduction in procurement cycle times.</li>
+              <li>Built a regression model with Scikit-learn to predict equipment failures, reducing unexpected downtime by <strong>15%</strong>.</li>
+              <li>Automated data processing with Python &amp; pandas, cutting manual reporting time by ~<strong>6 hours/week</strong>.</li>
+              <li>Integrated Excel procurement data via openpyxl, contributing to a <strong>20% reduction</strong> in procurement cycle times.</li>
             </ul>
+            <div class="timeline-tech">
+              <span>Scikit-learn</span><span>Python</span><span>pandas</span><span>openpyxl</span>
+            </div>
           </div>
         </div>
 
@@ -192,70 +246,139 @@
     </div>
   </section>
 
-  <!-- ==================== PROJECTS ==================== -->
+  <!-- PROJECTS -->
   <section class="section section-alt" id="projects">
     <div class="container">
-      <p class="section-label">Projects</p>
-      <h2 class="section-title">Selected<br>work.</h2>
+      <div class="section-header fade-in">
+        <p class="section-label">Projects</p>
+        <h2 class="section-title">Selected<br>work.</h2>
+      </div>
       <div class="projects-grid">
 
-        <div class="project-card glass-card featured fade-in">
-          <div class="project-tag">MSc Thesis (Management) &middot; Current</div>
-          <h3>AI Governance &amp; Deployment Readiness Framework for Clinical ML</h3>
-          <p>Developing a governance and deployment readiness framework for operationalising a lung cancer classification model in a clinical radiology setting. Maps the ML pipeline against EU AI Act requirements, ISO/IEC 42001 controls, and FDA/IMDRF medical AI lifecycle guidance.</p>
-          <div class="project-tech">
-            <span>EU AI Act</span><span>ISO/IEC 42001</span><span>Design Science Research</span><span>MLOps</span><span>Responsible AI</span>
+        <div class="project-card glass-card featured fade-in" data-project="governance">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-tag">MSc Thesis (Management)</span>
+              <span class="project-status live">Current</span>
+            </div>
+            <h3>AI Governance &amp; Deployment Readiness Framework</h3>
+            <p>Developing a governance and deployment readiness framework for operationalising a lung cancer classification model in a clinical radiology setting.</p>
+            <div class="project-tech">
+              <span>EU AI Act</span><span>ISO/IEC 42001</span><span>MLOps</span><span>Responsible AI</span>
+            </div>
           </div>
+          <button class="project-btn" onclick="openModal('governance')">
+            View Details
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
-        <div class="project-card glass-card fade-in">
-          <div class="project-tag">MSc Thesis (Data Science) &middot; 2025</div>
-          <h3>Lung Cancer Segmentation &amp; Classification Pipeline</h3>
-          <p>End-to-end segmentation-classification pipeline in PyTorch processing CT scans to predict lung tumour malignancy. Multi-branch deep neural architecture with Grad-CAM interpretability on the 130 GB LIDC-IDRI dataset.</p>
-          <div class="project-tech">
-            <span>PyTorch</span><span>CNN</span><span>Grad-CAM</span><span>DICOM</span><span>Responsible AI</span>
+        <div class="project-card glass-card fade-in" data-project="lungcancer">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-tag">MSc Thesis (Data Science)</span>
+              <span class="project-status done">2025</span>
+            </div>
+            <h3>Lung Cancer Segmentation &amp; Classification Pipeline</h3>
+            <p>End-to-end pipeline in PyTorch processing CT scans to predict lung tumour malignancy using a multi-branch deep neural architecture.</p>
+            <div class="project-tech">
+              <span>PyTorch</span><span>CNN</span><span>Grad-CAM</span><span>DICOM</span>
+            </div>
           </div>
+          <button class="project-btn" onclick="openModal('lungcancer')">
+            View Details
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
-        <div class="project-card glass-card fade-in">
-          <div class="project-tag">2024</div>
-          <h3>Brain Tumour Classification &amp; Segmentation</h3>
-          <p>Custom deep learning pipeline in TensorFlow/Keras for simultaneous MRI segmentation and classification, combining CNNs with data augmentation, structured label extraction, and SGD variant experimentation.</p>
-          <div class="project-tech">
-            <span>TensorFlow</span><span>Keras</span><span>CNN</span><span>MRI</span><span>Segmentation</span>
+        <div class="project-card glass-card fade-in" data-project="brain">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-tag">Deep Learning</span>
+              <span class="project-status done">2024</span>
+            </div>
+            <h3>Brain Tumour Classification &amp; Segmentation</h3>
+            <p>Custom deep learning pipeline in TensorFlow/Keras for simultaneous MRI segmentation and classification with CNNs and SGD variant experimentation.</p>
+            <div class="project-tech">
+              <span>TensorFlow</span><span>Keras</span><span>CNN</span><span>MRI</span>
+            </div>
           </div>
+          <button class="project-btn" onclick="openModal('brain')">
+            View Details
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
-        <div class="project-card glass-card fade-in">
-          <div class="project-tag">2024</div>
-          <h3>Predictive Modelling &amp; Feature Engineering</h3>
-          <p>Built and compared regression models (Ridge, Lasso, KNN, Kernel Ridge) with PCA dimensionality reduction and GridSearchCV hyperparameter tuning, evaluated with structured cross-validation for generalisability.</p>
-          <div class="project-tech">
-            <span>Scikit-learn</span><span>PCA</span><span>GridSearchCV</span><span>Cross-validation</span>
+        <div class="project-card glass-card fade-in" data-project="predictive">
+          <div class="project-card-inner">
+            <div class="project-meta">
+              <span class="project-tag">Machine Learning</span>
+              <span class="project-status done">2024</span>
+            </div>
+            <h3>Predictive Modelling &amp; Feature Engineering</h3>
+            <p>Built and compared regression models (Ridge, Lasso, KNN, Kernel Ridge) with PCA and GridSearchCV, evaluated with structured cross-validation.</p>
+            <div class="project-tech">
+              <span>Scikit-learn</span><span>PCA</span><span>GridSearchCV</span><span>Cross-validation</span>
+            </div>
           </div>
+          <button class="project-btn" onclick="openModal('predictive')">
+            View Details
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ==================== CONTACT ==================== -->
+  <!-- CONTACT -->
   <section class="section" id="contact">
-    <div class="container contact-container">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Let's build<br>something.</h2>
-      <p class="contact-sub">Open to collaboration, consulting, and interesting problems.<br>Reach out and let's talk.</p>
-      <div class="contact-links">
-        <a href="mailto:neilbasson2@gmail.com" class="btn-primary">neilbasson2@gmail.com</a>
-        <a href="https://www.linkedin.com/in/neil-basson-link-to-view" target="_blank" rel="noopener" class="btn-ghost">LinkedIn &#8599;</a>
+    <div class="container">
+      <div class="contact-wrap fade-in">
+        <div class="contact-text">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title" style="margin-bottom:1rem">Let's build<br>something.</h2>
+          <p class="contact-sub">Open to collaboration, consulting, and interesting problems. Reach out and let's talk.</p>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:neilbasson2@gmail.com" class="contact-card glass-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-val">neilbasson2@gmail.com</p>
+            </div>
+            <svg class="contact-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/neil-basson-link-to-view" target="_blank" rel="noopener" class="contact-card glass-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-val">neil-basson</p>
+            </div>
+            <svg class="contact-arrow" width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <p>&copy; 2026 Neil Basson &middot; Amsterdam</p>
   </footer>
+
+  <!-- PROJECT MODALS -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+    <div class="modal glass-card" id="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
